@@ -1,3 +1,8 @@
 language: csharp
-solution: pathing/buildnav/NavGen.sln
 solution: pathing/service/Nodes.sln
+install:
+  - nuget restore pathing/service/Nodes.sln
+  - nuget restore pathing/buildnav/NavGen.sln
+script:
+  - xbuild /p:Configuration=Release pathing/service/Nodes.sln
+  - xbuild /p:Configuration=Release pathing/buildnav/NavGen.sln
