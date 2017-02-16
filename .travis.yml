@@ -1,0 +1,3 @@
+language: csharp
+solution: pathing/buildnav/NavGen.sln
+solution: pathing/service/Nodes.sln
