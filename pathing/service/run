@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+docker build -t uthgard-pathing Nodes.Pathing
+docker stop uthgard-pathing || /bin/true
+docker rm uthgard-pathing || /bin/true
+docker run --log-driver=none --restart on-failure -it -p 20023:20023/tcp -v /opt/navmeshes:/pathing --memory 8g --name uthgard-pathing uthgard-pathing

@@ -1,0 +1,104 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Nodes.Pathing";
+
+service PathingService {
+	rpc Restart (RestartRequest) returns (RestartResponse);
+	rpc ListLoadedNavmeshes (ListLoadedNavmeshesRequest) returns (ListLoadedNavmeshesResponse);
+	rpc GetPathStraight (PathingRequest) returns (PathingResponse);
+	rpc GetPathStreamed (stream PathingRequest) returns (stream PathingResponse);
+	rpc GetRandomPoint (GetRandomPointRequest) returns (GetRandomPointResponse);
+	rpc GetClosestPoint (GetClosestPointRequest) returns (GetClosestPointResponse);
+	rpc HangTest(HangRequest) returns (HangRequest);
+}
+
+message HangRequest {
+    string Test = 1;
+}
+
+enum PathingResult {
+	UNKNOWN = 0;
+	PathFound = 1;
+	PartialPathFound = 2;
+	NoPathFound = 3;
+	NavmeshUnavailable = 4;
+}
+message PathPoint {
+	// Position
+	Vec3 Position = 1;
+
+	// dtPolyFlags
+	uint32 Flags = 2;
+}
+message Vec3 {
+	double X = 1;
+	double Y = 2;
+	double Z = 3;
+}
+
+message RestartRequest {}
+message RestartResponse {}
+
+message ListLoadedNavmeshesRequest {}
+message ListLoadedNavmeshesResponse {
+	// List of all navmeshes
+	repeated uint32 Navmeshes = 1;
+}
+
+message PathingRequest {
+	// Navmesh ID (Zone ClientID)
+	uint32 Navmesh = 1;
+
+	// Starting point of the path
+	Vec3 StartingPoint = 2;
+
+	// Destination of the path
+	Vec3 DestinationPoint = 3;
+
+	// Sequence ID (if any, found in response)
+	uint32 SequenceID = 4;
+}
+message PathingResponse {
+	// Error (if any)
+	PathingResult ResultCode = 1;
+
+	// Path nodes
+	repeated PathPoint Path = 2; // deprecated, use individual fields below
+
+	// Sequence ID (if any, found in response)
+	uint32 SequenceID = 3;
+
+	// Path
+	uint32 PathNodes = 4;
+	bytes SerializedNodes = 5;
+}
+
+message GetRandomPointRequest {
+	// Navmesh ID (Zone ClientID)
+	uint32 Navmesh = 1;
+
+	// Position (center)
+	Vec3 Position = 2;
+
+	// Radius around center
+	float Radius = 3;
+}
+message GetRandomPointResponse {
+	// Random Point
+	Vec3 Point = 1;
+}
+
+message GetClosestPointRequest {
+	// Navmesh ID (Zone ClientID)
+	uint32 Navmesh = 1;
+
+	// Position (center)
+	Vec3 Position = 2;
+
+	// +- Range along each axis
+	Vec3 Range = 3;
+}
+message GetClosestPointResponse {
+	// Closest Point
+	Vec3 Point = 1;
+}

@@ -1,0 +1,683 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E9525503-4363-4BF1-AD7A-94DE365D9A5E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CEM</RootNamespace>
+    <AssemblyName>navgen</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NAVGEN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NAVGEN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="..\editor\Client\Crc32.cs">
+      <Link>Client\Crc32.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\CsvFile.cs">
+      <Link>Client\CsvFile.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\CSVTypes\CityZoneCityCsv.cs">
+      <Link>Client\CSV\CityZoneCityCsv.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\CSVTypes\DungeonZoneDungeonChunk.cs">
+      <Link>Client\CSV\DungeonZoneDungeonChunk.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\CSVTypes\DungeonZoneDungeonPlace.cs">
+      <Link>Client\CSV\DungeonZoneDungeonPlace.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\CSVTypes\DungeonZoneDungeonProp.cs">
+      <Link>Client\CSV\DungeonZoneDungeonProp.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\CSVTypes\NormalZoneFixturesCsv.cs">
+      <Link>Client\CSV\NormalZoneFixturesCsv.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\CSVTypes\NormalZoneNifsCsv.cs">
+      <Link>Client\CSV\NormalZoneNifsCsv.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\CSVTypes\SkyCityZoneCityChunk.cs">
+      <Link>Client\CSV\SkyCityZoneCityChunk.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\CSVTypes\SkyCityZoneCityPlace.cs">
+      <Link>Client\CSV\SkyCityZoneCityPlace.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\CSVTypes\SkyCityZoneCityProp.cs">
+      <Link>Client\CSV\SkyCityZoneCityProp.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\IniFile.cs">
+      <Link>Client\IniFile.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\Json.cs">
+      <Link>Client\Json.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\BaseKey.cs">
+      <Link>Client\MNL\compounds\BaseKey.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\ByteKey.cs">
+      <Link>Client\MNL\compounds\ByteKey.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\ChannelData.cs">
+      <Link>Client\MNL\compounds\ChannelData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\Color4Key.cs">
+      <Link>Client\MNL\compounds\Color4Key.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\FloatKey.cs">
+      <Link>Client\MNL\compounds\FloatKey.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\KeyGroup.cs">
+      <Link>Client\MNL\compounds\KeyGroup.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\LODRange.cs">
+      <Link>Client\MNL\compounds\LODRange.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\MipMap.cs">
+      <Link>Client\MNL\compounds\MipMap.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\Morph.cs">
+      <Link>Client\MNL\compounds\Morph.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\NiRef.cs">
+      <Link>Client\MNL\compounds\NiRef.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\NiString.cs">
+      <Link>Client\MNL\compounds\NiString.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\Particle.cs">
+      <Link>Client\MNL\compounds\Particle.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\QuatKey.cs">
+      <Link>Client\MNL\compounds\QuatKey.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\SkinData.cs">
+      <Link>Client\MNL\compounds\SkinData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\SkinPartition.cs">
+      <Link>Client\MNL\compounds\SkinPartition.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\SkinPartitionUnkownItem1.cs">
+      <Link>Client\MNL\compounds\SkinPartitionUnkownItem1.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\SkinTransform.cs">
+      <Link>Client\MNL\compounds\SkinTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\SkinWeight.cs">
+      <Link>Client\MNL\compounds\SkinWeight.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\StringKey.cs">
+      <Link>Client\MNL\compounds\StringKey.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\TexDesc.cs">
+      <Link>Client\MNL\compounds\TexDesc.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\Triangle.cs">
+      <Link>Client\MNL\compounds\Triangle.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\compounds\VecKey.cs">
+      <Link>Client\MNL\compounds\VecKey.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eAlphaFormat.cs">
+      <Link>Client\MNL\enums\eAlphaFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eBillboardMode.cs">
+      <Link>Client\MNL\enums\eBillboardMode.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eChannelConvention.cs">
+      <Link>Client\MNL\enums\eChannelConvention.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eChannelType.cs">
+      <Link>Client\MNL\enums\eChannelType.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eCoordGenType.cs">
+      <Link>Client\MNL\enums\eCoordGenType.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eDecayType.cs">
+      <Link>Client\MNL\enums\eDecayType.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eEffectType.cs">
+      <Link>Client\MNL\enums\eEffectType.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eFaceDrawMode.cs">
+      <Link>Client\MNL\enums\eFaceDrawMode.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eKeyType.cs">
+      <Link>Client\MNL\enums\eKeyType.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eMipMapFormat.cs">
+      <Link>Client\MNL\enums\eMipMapFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eNifVersion.cs">
+      <Link>Client\MNL\enums\eNifVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\ePixelFormat.cs">
+      <Link>Client\MNL\enums\ePixelFormat.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\ePixelLayout.cs">
+      <Link>Client\MNL\enums\ePixelLayout.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eStencilAction.cs">
+      <Link>Client\MNL\enums\eStencilAction.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eStencilCompareMode.cs">
+      <Link>Client\MNL\enums\eStencilCompareMode.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eSymmetryType.cs">
+      <Link>Client\MNL\enums\eSymmetryType.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eTargetColor.cs">
+      <Link>Client\MNL\enums\eTargetColor.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eTexClampMode.cs">
+      <Link>Client\MNL\enums\eTexClampMode.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eTexFilterMode.cs">
+      <Link>Client\MNL\enums\eTexFilterMode.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eTexTransform.cs">
+      <Link>Client\MNL\enums\eTexTransform.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\enums\eTexType.cs">
+      <Link>Client\MNL\enums\eTexType.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\NiFile.cs">
+      <Link>Client\MNL\NiFile.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\NiFooter.cs">
+      <Link>Client\MNL\NiFooter.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\NiHeader.cs">
+      <Link>Client\MNL\NiHeader.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\ATextureRenderData.cs">
+      <Link>Client\MNL\objs\ATextureRenderData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiAlphaController.cs">
+      <Link>Client\MNL\objs\NiAlphaController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiAlphaProperty.cs">
+      <Link>Client\MNL\objs\NiAlphaProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiAmbientLight.cs">
+      <Link>Client\MNL\objs\NiAmbientLight.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiAutoNormalParticles.cs">
+      <Link>Client\MNL\objs\NiAutoNormalParticles.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiAutoNormalParticlesData.cs">
+      <Link>Client\MNL\objs\NiAutoNormalParticlesData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiAVObject.cs">
+      <Link>Client\MNL\objs\NiAVObject.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiBillboardNode.cs">
+      <Link>Client\MNL\objs\NiBillboardNode.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiBinaryExtraData.cs">
+      <Link>Client\MNL\objs\NiBinaryExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiBooleanExtraData.cs">
+      <Link>Client\MNL\objs\NiBooleanExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiBoolInterpController.cs">
+      <Link>Client\MNL\objs\NiBoolInterpController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiCamera.cs">
+      <Link>Client\MNL\objs\NiCamera.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiCollisionObject.cs">
+      <Link>Client\MNL\objs\NiCollisionObject.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiColorData.cs">
+      <Link>Client\MNL\objs\NiColorData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiColorExtraData.cs">
+      <Link>Client\MNL\objs\NiColorExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiDirectionalLight.cs">
+      <Link>Client\MNL\objs\NiDirectionalLight.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiDitherProperty.cs">
+      <Link>Client\MNL\objs\NiDitherProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiDynamicEffect.cs">
+      <Link>Client\MNL\objs\NiDynamicEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiExtraData.cs">
+      <Link>Client\MNL\objs\NiExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiFloatData.cs">
+      <Link>Client\MNL\objs\NiFloatData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiFloatExtraData.cs">
+      <Link>Client\MNL\objs\NiFloatExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiFloatInterpController.cs">
+      <Link>Client\MNL\objs\NiFloatInterpController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiFogProperty.cs">
+      <Link>Client\MNL\objs\NiFogProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiGeometry.cs">
+      <Link>Client\MNL\objs\NiGeometry.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiGeometryData.cs">
+      <Link>Client\MNL\objs\NiGeometryData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiGeomMorpherController.cs">
+      <Link>Client\MNL\objs\NiGeomMorpherController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiGravity.cs">
+      <Link>Client\MNL\objs\NiGravity.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiIntegerExtraData.cs">
+      <Link>Client\MNL\objs\NiIntegerExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiIntegersExtraData.cs">
+      <Link>Client\MNL\objs\NiIntegersExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiInterpController.cs">
+      <Link>Client\MNL\objs\NiInterpController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiInterpolator.cs">
+      <Link>Client\MNL\objs\NiInterpolator.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiKeyframeController.cs">
+      <Link>Client\MNL\objs\NiKeyframeController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiKeyframeData.cs">
+      <Link>Client\MNL\objs\NiKeyframeData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiLight.cs">
+      <Link>Client\MNL\objs\NiLight.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiLightColorController.cs">
+      <Link>Client\MNL\objs\NiLightColorController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiLODData.cs">
+      <Link>Client\MNL\objs\NiLODData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiLODNode.cs">
+      <Link>Client\MNL\objs\NiLODNode.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiLookAtController.cs">
+      <Link>Client\MNL\objs\NiLookAtController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiMaterialColorController.cs">
+      <Link>Client\MNL\objs\NiMaterialColorController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiMaterialProperty.cs">
+      <Link>Client\MNL\objs\NiMaterialProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiMorphData.cs">
+      <Link>Client\MNL\objs\NiMorphData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiNode.cs">
+      <Link>Client\MNL\objs\NiNode.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiObject.cs">
+      <Link>Client\MNL\objs\NiObject.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiObjectNET.cs">
+      <Link>Client\MNL\objs\NiObjectNET.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiPalette.cs">
+      <Link>Client\MNL\objs\NiPalette.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticleBomb.cs">
+      <Link>Client\MNL\objs\NiParticleBomb.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticleColorModifier.cs">
+      <Link>Client\MNL\objs\NiParticleColorModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticleGrowFade.cs">
+      <Link>Client\MNL\objs\NiParticleGrowFade.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticleMeshes.cs">
+      <Link>Client\MNL\objs\NiParticleMeshes.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticleMeshesData.cs">
+      <Link>Client\MNL\objs\NiParticleMeshesData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticleMeshModifier.cs">
+      <Link>Client\MNL\objs\NiParticleMeshModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticleModifier.cs">
+      <Link>Client\MNL\objs\NiParticleModifier.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticleRotation.cs">
+      <Link>Client\MNL\objs\NiParticleRotation.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticles.cs">
+      <Link>Client\MNL\objs\NiParticles.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticlesData.cs">
+      <Link>Client\MNL\objs\NiParticlesData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiParticleSystemController.cs">
+      <Link>Client\MNL\objs\NiParticleSystemController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiPathController.cs">
+      <Link>Client\MNL\objs\NiPathController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiPixelData.cs">
+      <Link>Client\MNL\objs\NiPixelData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiPlanarCollider.cs">
+      <Link>Client\MNL\objs\NiPlanarCollider.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiPoint3InterpController.cs">
+      <Link>Client\MNL\objs\NiPoint3InterpController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiPointLight.cs">
+      <Link>Client\MNL\objs\NiPointLight.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiPosData.cs">
+      <Link>Client\MNL\objs\NiPosData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiProperty.cs">
+      <Link>Client\MNL\objs\NiProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiRangeLODData.cs">
+      <Link>Client\MNL\objs\NiRangeLODData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiRotatingParticles.cs">
+      <Link>Client\MNL\objs\NiRotatingParticles.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiRotatingParticlesData.cs">
+      <Link>Client\MNL\objs\NiRotatingParticlesData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiScreenLODData.cs">
+      <Link>Client\MNL\objs\NiScreenLODData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiSingleInterpController.cs">
+      <Link>Client\MNL\objs\NiSingleInterpController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiSkinData.cs">
+      <Link>Client\MNL\objs\NiSkinData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiSkinInstance.cs">
+      <Link>Client\MNL\objs\NiSkinInstance.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiSkinPartition.cs">
+      <Link>Client\MNL\objs\NiSkinPartition.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiSourceTexture.cs">
+      <Link>Client\MNL\objs\NiSourceTexture.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiSpecularProperty.cs">
+      <Link>Client\MNL\objs\NiSpecularProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiSphericalCollider.cs">
+      <Link>Client\MNL\objs\NiSphericalCollider.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiSpotLight.cs">
+      <Link>Client\MNL\objs\NiSpotLight.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiStencilProperty.cs">
+      <Link>Client\MNL\objs\NiStencilProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiStringExtraData.cs">
+      <Link>Client\MNL\objs\NiStringExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiStringsExtraData.cs">
+      <Link>Client\MNL\objs\NiStringsExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiSwitchNode.cs">
+      <Link>Client\MNL\objs\NiSwitchNode.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTextKeyExtraData.cs">
+      <Link>Client\MNL\objs\NiTextKeyExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTexture.cs">
+      <Link>Client\MNL\objs\NiTexture.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTextureEffect.cs">
+      <Link>Client\MNL\objs\NiTextureEffect.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTextureTransformController.cs">
+      <Link>Client\MNL\objs\NiTextureTransformController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTexturingProperty.cs">
+      <Link>Client\MNL\objs\NiTexturingProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTimeController.cs">
+      <Link>Client\MNL\objs\NiTimeController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTriBasedGeomData.cs">
+      <Link>Client\MNL\objs\NiTriBasedGeomData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTriBasedGeometry.cs">
+      <Link>Client\MNL\objs\NiTriBasedGeometry.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTriShape.cs">
+      <Link>Client\MNL\objs\NiTriShape.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTriShapeData.cs">
+      <Link>Client\MNL\objs\NiTriShapeData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTriStrips.cs">
+      <Link>Client\MNL\objs\NiTriStrips.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiTriStripsData.cs">
+      <Link>Client\MNL\objs\NiTriStripsData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiUVController.cs">
+      <Link>Client\MNL\objs\NiUVController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiUVData.cs">
+      <Link>Client\MNL\objs\NiUVData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiVectorExtraData.cs">
+      <Link>Client\MNL\objs\NiVectorExtraData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiVertexColorProperty.cs">
+      <Link>Client\MNL\objs\NiVertexColorProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiVisController.cs">
+      <Link>Client\MNL\objs\NiVisController.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiVisData.cs">
+      <Link>Client\MNL\objs\NiVisData.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiWireframeProperty.cs">
+      <Link>Client\MNL\objs\NiWireframeProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\objs\NiZBufferProperty.cs">
+      <Link>Client\MNL\objs\NiZBufferProperty.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\NiLib\ReaderExtensions.cs">
+      <Link>Client\MNL\ReaderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\PCXImage.cs">
+      <Link>Client\PCXImage.cs</Link>
+    </Compile>
+    <Compile Include="..\editor\Client\TinyMPK.cs">
+      <Link>Client\TinyMPK.cs</Link>
+    </Compile>
+    <Compile Include="Client\MNL\objs\NiShadeProperty.cs" />
+    <Compile Include="Client\Writers\GeomSetWriter.cs" />
+    <Compile Include="Client\ZoneExporter\Boundaries.cs" />
+    <Compile Include="Client\ZoneExporter\City.cs" />
+    <Compile Include="Client\ZoneExporter\Doors.cs" />
+    <Compile Include="Client\ZoneExporter\Dungeon.cs" />
+    <Compile Include="Client\ZoneExporter\Heightmap.cs" />
+    <Compile Include="Client\ZoneExporter\Ladders.cs" />
+    <Compile Include="Compability.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="Core\MilliTimer.cs" />
+    <Compile Include="Core\Types.cs" />
+    <Compile Include="Datastructures\AxisAlignedRectangle.cs" />
+    <Compile Include="Datastructures\Graph.cs" />
+    <Compile Include="Datastructures\Line2.cs" />
+    <Compile Include="Datastructures\Vector2.cs" />
+    <Compile Include="Client\Writers\DoorWriter.cs" />
+    <Compile Include="Fields\Field.cs" />
+    <Compile Include="Fields\Injector.cs" />
+    <Compile Include="Fields\WrapAroundRange.cs" />
+    <Compile Include="Client\Writers\LadderWriter.cs" />
+    <Compile Include="World\GlobalVector.cs" />
+    <Compile Include="Fields\Range.cs" />
+    <Compile Include="Utils\InputBox.cs" />
+    <Compile Include="Utils\LINQ.cs" />
+    <Compile Include="Utils\MathUtil.cs" />
+    <Compile Include="World\ZoneConnectionGraph.cs" />
+    <Compile Include="World\HeightMap.cs" />
+    <Compile Include="Client\ZoneExporter\Zone2Obj.cs" />
+    <Compile Include="Client\Writers\WavefrontObjFile.cs" />
+    <Compile Include="Core\ReuseTimer.cs" />
+    <Compile Include="Datastructures\IPoint3D.cs" />
+    <Compile Include="World\WorldMgr.cs" />
+    <Compile Include="World\Zone2.cs" />
+    <Compile Include="Core\CommandLineArgs.cs" />
+    <Compile Include="Utils\Extensions.cs" />
+    <Compile Include="Client\ClientData.cs" />
+    <Compile Include="Utils\IO.cs" />
+    <Compile Include="Utils\Win32.cs" />
+    <Compile Include="Core\Command.cs" />
+    <Compile Include="Core\CLI.cs" />
+    <Compile Include="Core\Core.cs" />
+    <Compile Include="Core\CVarAttribute.cs" />
+    <Compile Include="Core\CVars.cs" />
+    <Compile Include="Utils\Log.cs" />
+    <Compile Include="Utils\Profiler.cs" />
+    <Compile Include="Utils\Reflector.cs" />
+    <Compile Include="Utils\Util.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="World\NavmeshMgr.cs" />
+    <Compile Include="World\Region.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>
+      </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Emgu.CV, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.221.x64.1.5\lib\Emgu.CV.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.GPU, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.221.x64.1.5\lib\Emgu.CV.GPU.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.ML, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.221.x64.1.5\lib\Emgu.CV.ML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.221.x64.1.5\lib\Emgu.CV.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Emgu.Util, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <HintPath>packages\EmguCV.221.x64.1.5\lib\Emgu.Util.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="OpenTK">
+      <HintPath>.\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="base\buildnav.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="base\SDL.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_core220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="opencv_imgproc220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ignorelist.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="base\ReUth.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="cem.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="base\DroidSans.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

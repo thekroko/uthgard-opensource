@@ -1,0 +1,43 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Nodes.Common.Status";
+
+service StatusService {
+	rpc ReportStatus (ReportStatusRequest) returns (ReportStatusResponse);
+	rpc LookupService (LookupServiceRequest) returns (LookupServiceResponse);
+}
+
+message ReportStatusRequest {
+	// Unique name of this service
+	string name = 1;
+
+	// True if this instance is healthy and ready to accept requests
+	bool healthy = 2;
+
+	// Port hosting an http status page
+	int32 statusPort = 3;
+
+	// RPC port
+	int32 rpcPort = 4;
+}
+message ReportStatusResponse {}
+
+message LookupServiceRequest {
+	// Name of the service we are looking up
+	string name = 1;
+}
+message LookupServiceResponse {
+	// Set of backende registered under this name
+	repeated .Backend backends = 1;
+}
+
+message Backend {
+	// Serialized IP Adddress
+	bytes ip = 1;
+
+	// Port hosting an http status page
+	int32 statusPort = 2;
+
+	// RPC Port
+	int32 rpcPort = 3;
+}

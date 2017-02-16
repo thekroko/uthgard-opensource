@@ -1,0 +1,2 @@
+"..\packages\Grpc.Tools.1.1.0\tools\windows_x64\protoc.exe"  "--proto_path=..\Nodes.Pathing" "--csharp_out=..\Nodes.Pathing" "--grpc_out=..\Nodes.Pathing" "--plugin=protoc-gen-grpc=..\packages\Grpc.Tools.1.1.0\tools\windows_x64\grpc_csharp_plugin.exe" "..\Nodes.Pathing\service.proto" 
+pause
