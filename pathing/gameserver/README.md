@@ -1,4 +1,4 @@
-== GameServer Pathing Integration ==
+# GameServer Pathing Integration
 
 Install instructions:
 
