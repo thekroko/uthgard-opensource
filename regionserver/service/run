@@ -1,0 +1,7 @@
+#!/bin/sh
+IP=$(curl -4 ifconfig.co)
+echo Local IP is $IP
+docker stop regionserver || /bin/true
+docker rm regionserver || /bin/true
+docker build -t regionserver . && docker run --name regionserver --net=host --log-driver=none -p 10400:10400/tcp -p 20400:20400/tcp -p 10400:10400/udp -it regionserver $IP
+#docker run -p 10400:10400/tcp -p 20400:20400/tcp -p 10400:10400/udp --rm -it regionserver gdb --args ./regionserver $IP

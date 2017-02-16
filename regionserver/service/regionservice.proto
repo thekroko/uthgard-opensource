@@ -1,0 +1,50 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "RegionServer";
+
+service RegionService {
+	// Generic info about this server
+	rpc ServerInfo (ServerInfoRequest) returns (ServerInfoResponse);
+
+	// Deletes all clients (called after server reboot)
+	rpc ClearAllClients (ClearAllClientsRequest) returns (ClearAllClientsResponse);
+
+	// Adds a client to this region
+	rpc AddClient (AddClientRequest) returns (AddClientResponse);
+
+	// Removes a client from this region
+	rpc RemoveClient (RemoveClientRequest) returns (RemoveClientResponse);
+	
+	// Lists all clients of the regionserver
+	rpc ListClients (ListClientsRequest) returns (stream ClientInfo);
+}
+
+message ServerInfoRequest {}
+message ServerInfoResponse {
+	string PublicIp4 = 1;	
+	int32 UdpPort = 2;
+}
+
+message ClearAllClientsRequest {}
+message ClearAllClientsResponse {}
+
+message AddClientRequest {
+	int32 sessionId = 1;
+	bytes encryptionKey = 2; // RC4
+	int32 uniqueId = 3; // Used to figure out if this is the same client or not
+	string endpoint = 4; // Optional (if known)
+}
+message AddClientResponse {}
+
+message RemoveClientRequest {
+	int32 sessionId = 1;
+}
+message RemoveClientResponse {}
+
+message ListClientsRequest {}
+message ClientInfo {
+	int32 sessionId = 1;
+	bool isKnown = 2;
+	int32 uniqueId = 3;
+	string endpoint = 4;
+}

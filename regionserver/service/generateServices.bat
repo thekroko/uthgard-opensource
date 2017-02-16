@@ -1,0 +1,2 @@
+"..\packages\Grpc.Tools.1.1.0\tools\windows_x64\protoc.exe"  "--proto_path=..\regionserver2" "--csharp_out=..\regionserver2" "--grpc_out=..\regionserver2" "--plugin=protoc-gen-grpc=..\packages\Grpc.Tools.1.1.0\tools\windows_x64\grpc_csharp_plugin.exe" "..\regionserver2\regionservice.proto" 
+pause
