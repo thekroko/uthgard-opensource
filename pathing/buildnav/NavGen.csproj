@@ -65,11 +65,11 @@
   </Target>
   -->
   <ItemGroup>
-    <Compile Include=".\Client\Crc32.cs">
-      <Link>Client\Crc32.cs</Link>
+    <Compile Include=".\Utils\Crc32.cs">
+      <Link>Utils\Crc32.cs</Link>
     </Compile>
-    <Compile Include=".\Client\CsvFile.cs">
-      <Link>Client\CsvFile.cs</Link>
+    <Compile Include=".\Utils\CsvFile.cs">
+      <Link>Utils\CsvFile.cs</Link>
     </Compile>
     <Compile Include=".\Client\CSVTypes\CityZoneCityCsv.cs">
       <Link>Client\CSV\CityZoneCityCsv.cs</Link>
