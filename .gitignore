@@ -11,3 +11,5 @@
 # Fortran module files
 *.mod
 *.smod
+
+*.suo

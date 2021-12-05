@@ -1,0 +1,14 @@
+public static void Run()
+{
+	List<obj> rem = new List<obj>();
+	
+	foreach (obj f in objects)
+	{
+		if (f.NIF.FileName == "nifname.nif") //delete by name
+		//if (f.Z >= 8000) //min Z Level
+			rem.Add(f);
+	}
+	
+    foreach (obj i in rem)
+		Objects.Fixtures.Remove(i);
+}

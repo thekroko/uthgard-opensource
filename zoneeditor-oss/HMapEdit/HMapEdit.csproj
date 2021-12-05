@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF2558C9-913C-4D44-AD41-6A8A3C166927}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HMapEdit</RootNamespace>
+    <AssemblyName>ZoneEditor</AssemblyName>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3DX, Version=1.0.2911.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.VisualC" />
+    <Reference Include="SlimDX, Version=2.0.13.43, Culture=neutral, PublicKeyToken=b1b0c32fd1ffe4f9, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NiLib\Ni2Obj.cs" />
+    <Compile Include="Tools\CommandLine.cs" />
+    <Compile Include="Tools\CommandLineFlags.cs" />
+    <Compile Include="Tools\Extensions.cs" />
+    <Compile Include="Tools\WavefrontObjFile.cs" />
+    <Compile Include="Engine\PatchMap.cs" />
+    <Compile Include="Engine\SoundMgr.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CrashDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CrashDialog.Designer.cs">
+      <DependentUpon>CrashDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ScriptConsole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScriptConsole.Designer.cs">
+      <DependentUpon>ScriptConsole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SoundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SoundForm.Designer.cs">
+      <DependentUpon>SoundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TexCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TexCtrl.Designer.cs">
+      <DependentUpon>TexCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TexForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TexForm.Designer.cs">
+      <DependentUpon>TexForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NiLib\compounds\BaseKey.cs" />
+    <Compile Include="NiLib\compounds\ByteKey.cs" />
+    <Compile Include="NiLib\compounds\ChannelData.cs" />
+    <Compile Include="NiLib\compounds\Color4Key.cs" />
+    <Compile Include="NiLib\compounds\FloatKey.cs" />
+    <Compile Include="NiLib\compounds\KeyGroup.cs" />
+    <Compile Include="NiLib\compounds\LODRange.cs" />
+    <Compile Include="NiLib\compounds\MipMap.cs" />
+    <Compile Include="NiLib\compounds\Morph.cs" />
+    <Compile Include="NiLib\compounds\NiRef.cs" />
+    <Compile Include="NiLib\compounds\NiString.cs" />
+    <Compile Include="NiLib\compounds\Particle.cs" />
+    <Compile Include="NiLib\compounds\QuatKey.cs" />
+    <Compile Include="NiLib\compounds\SkinData.cs" />
+    <Compile Include="NiLib\compounds\SkinPartition.cs" />
+    <Compile Include="NiLib\compounds\SkinPartitionUnkownItem1.cs" />
+    <Compile Include="NiLib\compounds\SkinTransform.cs" />
+    <Compile Include="NiLib\compounds\SkinWeight.cs" />
+    <Compile Include="NiLib\compounds\StringKey.cs" />
+    <Compile Include="NiLib\compounds\TexDesc.cs" />
+    <Compile Include="NiLib\compounds\Triangle.cs" />
+    <Compile Include="NiLib\compounds\VecKey.cs" />
+    <Compile Include="NiLib\enums\eAlphaFormat.cs" />
+    <Compile Include="NiLib\enums\eBillboardMode.cs" />
+    <Compile Include="NiLib\enums\eChannelConvention.cs" />
+    <Compile Include="NiLib\enums\eChannelType.cs" />
+    <Compile Include="NiLib\enums\eCoordGenType.cs" />
+    <Compile Include="NiLib\enums\eDecayType.cs" />
+    <Compile Include="NiLib\enums\eEffectType.cs" />
+    <Compile Include="NiLib\enums\eFaceDrawMode.cs" />
+    <Compile Include="NiLib\enums\eKeyType.cs" />
+    <Compile Include="NiLib\enums\eMipMapFormat.cs" />
+    <Compile Include="NiLib\enums\eNifVersion.cs" />
+    <Compile Include="NiLib\enums\ePixelFormat.cs" />
+    <Compile Include="NiLib\enums\ePixelLayout.cs" />
+    <Compile Include="NiLib\enums\eStencilAction.cs" />
+    <Compile Include="NiLib\enums\eStencilCompareMode.cs" />
+    <Compile Include="NiLib\enums\eSymmetryType.cs" />
+    <Compile Include="NiLib\enums\eTargetColor.cs" />
+    <Compile Include="NiLib\enums\eTexClampMode.cs" />
+    <Compile Include="NiLib\enums\eTexFilterMode.cs" />
+    <Compile Include="NiLib\enums\eTexTransform.cs" />
+    <Compile Include="NiLib\enums\eTexType.cs" />
+    <Compile Include="NiLib\NiFile.cs" />
+    <Compile Include="NiLib\NiFooter.cs" />
+    <Compile Include="NiLib\NiHeader.cs" />
+    <Compile Include="NiLib\objs\ATextureRenderData.cs" />
+    <Compile Include="NiLib\objs\NiAlphaController.cs" />
+    <Compile Include="NiLib\objs\NiAlphaProperty.cs" />
+    <Compile Include="NiLib\objs\NiAmbientLight.cs" />
+    <Compile Include="NiLib\objs\NiAutoNormalParticles.cs" />
+    <Compile Include="NiLib\objs\NiAutoNormalParticlesData.cs" />
+    <Compile Include="NiLib\objs\NiAVObject.cs" />
+    <Compile Include="NiLib\objs\NiBillboardNode.cs" />
+    <Compile Include="NiLib\objs\NiBinaryExtraData.cs" />
+    <Compile Include="NiLib\objs\NiBooleanExtraData.cs" />
+    <Compile Include="NiLib\objs\NiBoolInterpController.cs" />
+    <Compile Include="NiLib\objs\NiCamera.cs" />
+    <Compile Include="NiLib\objs\NiCollisionObject.cs" />
+    <Compile Include="NiLib\objs\NiColorData.cs" />
+    <Compile Include="NiLib\objs\NiColorExtraData.cs" />
+    <Compile Include="NiLib\objs\NiDirectionalLight.cs" />
+    <Compile Include="NiLib\objs\NiDitherProperty.cs" />
+    <Compile Include="NiLib\objs\NiDynamicEffect.cs" />
+    <Compile Include="NiLib\objs\NiExtraData.cs" />
+    <Compile Include="NiLib\objs\NiFloatData.cs" />
+    <Compile Include="NiLib\objs\NiFloatExtraData.cs" />
+    <Compile Include="NiLib\objs\NiFloatInterpController.cs" />
+    <Compile Include="NiLib\objs\NiFogProperty.cs" />
+    <Compile Include="NiLib\objs\NiGeometry.cs" />
+    <Compile Include="NiLib\objs\NiGeometryData.cs" />
+    <Compile Include="NiLib\objs\NiGeomMorpherController.cs" />
+    <Compile Include="NiLib\objs\NiGravity.cs" />
+    <Compile Include="NiLib\objs\NiIntegerExtraData.cs" />
+    <Compile Include="NiLib\objs\NiIntegersExtraData.cs" />
+    <Compile Include="NiLib\objs\NiInterpController.cs" />
+    <Compile Include="NiLib\objs\NiInterpolator.cs" />
+    <Compile Include="NiLib\objs\NiKeyframeController.cs" />
+    <Compile Include="NiLib\objs\NiKeyframeData.cs" />
+    <Compile Include="NiLib\objs\NiLight.cs" />
+    <Compile Include="NiLib\objs\NiLightColorController.cs" />
+    <Compile Include="NiLib\objs\NiLODData.cs" />
+    <Compile Include="NiLib\objs\NiLODNode.cs" />
+    <Compile Include="NiLib\objs\NiLookAtController.cs" />
+    <Compile Include="NiLib\objs\NiMaterialColorController.cs" />
+    <Compile Include="NiLib\objs\NiMaterialProperty.cs" />
+    <Compile Include="NiLib\objs\NiMorphData.cs" />
+    <Compile Include="NiLib\objs\NiNode.cs" />
+    <Compile Include="NiLib\objs\NiObject.cs" />
+    <Compile Include="NiLib\objs\NiObjectNET.cs" />
+    <Compile Include="NiLib\objs\NiPalette.cs" />
+    <Compile Include="NiLib\objs\NiParticleBomb.cs" />
+    <Compile Include="NiLib\objs\NiParticleColorModifier.cs" />
+    <Compile Include="NiLib\objs\NiParticleGrowFade.cs" />
+    <Compile Include="NiLib\objs\NiParticleMeshes.cs" />
+    <Compile Include="NiLib\objs\NiParticleMeshesData.cs" />
+    <Compile Include="NiLib\objs\NiParticleMeshModifier.cs" />
+    <Compile Include="NiLib\objs\NiParticleModifier.cs" />
+    <Compile Include="NiLib\objs\NiParticleRotation.cs" />
+    <Compile Include="NiLib\objs\NiParticles.cs" />
+    <Compile Include="NiLib\objs\NiParticlesData.cs" />
+    <Compile Include="NiLib\objs\NiParticleSystemController.cs" />
+    <Compile Include="NiLib\objs\NiPathController.cs" />
+    <Compile Include="NiLib\objs\NiPixelData.cs" />
+    <Compile Include="NiLib\objs\NiPlanarCollider.cs" />
+    <Compile Include="NiLib\objs\NiPoint3InterpController.cs" />
+    <Compile Include="NiLib\objs\NiPointLight.cs" />
+    <Compile Include="NiLib\objs\NiPosData.cs" />
+    <Compile Include="NiLib\objs\NiProperty.cs" />
+    <Compile Include="NiLib\objs\NiRangeLODData.cs" />
+    <Compile Include="NiLib\objs\NiRotatingParticles.cs" />
+    <Compile Include="NiLib\objs\NiRotatingParticlesData.cs" />
+    <Compile Include="NiLib\objs\NiScreenLODData.cs" />
+    <Compile Include="NiLib\objs\NiSingleInterpController.cs" />
+    <Compile Include="NiLib\objs\NiSkinData.cs" />
+    <Compile Include="NiLib\objs\NiSkinInstance.cs" />
+    <Compile Include="NiLib\objs\NiSkinPartition.cs" />
+    <Compile Include="NiLib\objs\NiSourceTexture.cs" />
+    <Compile Include="NiLib\objs\NiSpecularProperty.cs" />
+    <Compile Include="NiLib\objs\NiSphericalCollider.cs" />
+    <Compile Include="NiLib\objs\NiSpotLight.cs" />
+    <Compile Include="NiLib\objs\NiStencilProperty.cs" />
+    <Compile Include="NiLib\objs\NiStringExtraData.cs" />
+    <Compile Include="NiLib\objs\NiStringsExtraData.cs" />
+    <Compile Include="NiLib\objs\NiSwitchNode.cs" />
+    <Compile Include="NiLib\objs\NiTextKeyExtraData.cs" />
+    <Compile Include="NiLib\objs\NiTexture.cs" />
+    <Compile Include="NiLib\objs\NiTextureEffect.cs" />
+    <Compile Include="NiLib\objs\NiTextureTransformController.cs" />
+    <Compile Include="NiLib\objs\NiTexturingProperty.cs" />
+    <Compile Include="NiLib\objs\NiTimeController.cs" />
+    <Compile Include="NiLib\objs\NiTriBasedGeomData.cs" />
+    <Compile Include="NiLib\objs\NiTriBasedGeometry.cs" />
+    <Compile Include="NiLib\objs\NiTriShape.cs" />
+    <Compile Include="NiLib\objs\NiTriShapeData.cs" />
+    <Compile Include="NiLib\objs\NiTriStrips.cs" />
+    <Compile Include="NiLib\objs\NiTriStripsData.cs" />
+    <Compile Include="NiLib\objs\NiUVController.cs" />
+    <Compile Include="NiLib\objs\NiUVData.cs" />
+    <Compile Include="NiLib\objs\NiVectorExtraData.cs" />
+    <Compile Include="NiLib\objs\NiVertexColorProperty.cs" />
+    <Compile Include="NiLib\objs\NiVisController.cs" />
+    <Compile Include="NiLib\objs\NiVisData.cs" />
+    <Compile Include="NiLib\objs\NiWireframeProperty.cs" />
+    <Compile Include="NiLib\objs\NiZBufferProperty.cs" />
+    <Compile Include="NiLib\ReaderExtensions.cs" />
+    <Compile Include="Tools\Crc32.cs" />
+    <Compile Include="Tools\GameData.cs" />
+    <Compile Include="Tools\NIFModel.cs" />
+    <Compile Include="Tools\TerrainTex.cs" />
+    <Compile Include="Tools\ImageMgr.cs" />
+    <Compile Include="Tools\INIStreamer.cs" />
+    <Compile Include="Forms\InputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InputForm.Designer.cs">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\Light.cs" />
+    <Compile Include="Forms\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NIFForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NIFForm.Designer.cs">
+      <DependentUpon>NIFForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Engine\Objects.cs" />
+    <Compile Include="Forms\ScriptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ScriptForm.Designer.cs">
+      <DependentUpon>ScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\OBJModel.cs" />
+    <Compile Include="Tools\OBJLoader.cs" />
+    <Compile Include="Tools\PCXImage.cs" />
+    <Compile Include="Engine\Polygon.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CrashDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CrashDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Loading.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NIFForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NIFForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScriptConsole.resx">
+      <DependentUpon>ScriptConsole.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SoundForm.resx">
+      <DependentUpon>SoundForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TexCtrl.resx">
+      <DependentUpon>TexCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TexForm.resx">
+      <DependentUpon>TexForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScriptForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScriptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SelectNIFDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectNIFDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Forms\RenderControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\RenderControl.Designer.cs">
+      <DependentUpon>RenderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SelectNIFDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SelectNIFDialog.Designer.cs">
+      <DependentUpon>SelectNIFDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\LocalTextures.cs" />
+    <Compile Include="Tools\TinyMPK.cs" />
+    <Compile Include="Tools\Utils.cs" />
+    <Compile Include="Engine\Zone.cs" />
+    <Compile Include="Engine\Zonejump.cs" />
+    <None Include="Resources\patchmap.fx" />
+    <None Include="Resources\patchmap.fx.old" />
+    <None Include="Resources\render.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\CountObjects.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\DeleteObjects.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\empty.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\FreezeObjects.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\Help.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\HideObjects.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\MoveObjects.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\RenderInfo.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\shortcuts.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

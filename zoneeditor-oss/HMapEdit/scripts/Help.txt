@@ -1,0 +1,26 @@
+﻿/*
+Types:
+---------
+obj.
+	ID
+	NIF
+	NIF_ID
+	Name
+	
+	X, Y, Z
+	Scale
+	Rotation
+	
+	AxisX, AxisY, AxisZ
+
+	OnGround
+	Collision
+	Hidden
+	WireFrame
+	Group
+	
+Lists:
+------
+objects
+nifs
+*/

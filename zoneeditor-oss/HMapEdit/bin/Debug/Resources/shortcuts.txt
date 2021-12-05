@@ -1,0 +1,97 @@
+Command Args
+=================================
+--no-objects
+--aa
+--new-rendering
+
+Zone Edit Shortcuts
+==================================
+
+General
+-----------------
+F1								Tool - Cursor
+F2								Tool - Edit HMap
+F3								Tool - Smooth
+F4								Tool - Polygons
+STRG + F1						Tool - Objects
+STRG + F2						Tool - Zonejumps
+STRG + F3						Tool - Measure
+STRG + F4						Tool - Light
+E								Switch Fillmode (Solid -> Point -> Wire -> ..)
+BACKSPACE						Scripteditor
+
+
+
+Camera
+-----------------
+Right mouse button pressed		Camera Rotation
+Middle mouse button pressed		Camera Movement
+Mouse scroll					Camera Zoom
+STRG + Home (Pos1)				Aligns the Camera to the object
+A, D, S, W						Moves the camera around
+F, R							Increases/Decreases the camera Zoom
+<, >							Increases/Decreases the camera mouse scrool zoom ratio
++, -							Increases/Decreases the camera height						
+
+
+Heightmap/Smooth
+-----------------
+Left mouse button				Apply Tool
+Q								Negate Strength
+T, G							Increases/Decreases Radius
+Y, X							Increases/Decreases Strength/Factor
+
+
+Polygon Editing
+-----------------
+Del								Remove Polygon
+Ins								Inserts a polygon between the selected polygon
+End								Creates a poly at the end of the chain
+Home (Pos1)						Moves the selected polygon to the cursor
+4, 6, 2, 8						Moves the polygon around
+
+
+Object Placement
+-----------------
+Left mouse button				Select Object
+Q								Show Bounding
+Del								Remove Object
+Ins								Opens the NIF Selection screen to insert a new object at cursor position
+End								Clones an object
+Home (Pos1)						Moves the object to the cursor
+PageUp							Moves the object to the camera target
+PageDown						Clone + Move  + Rotate + Scale
+B								Rotates the object to a random value
+M								Changes the scale by a random value
+Space							Hides the selected object
+STRG + Space					Switches the fillmode for the object to Wireframe
+Num1							Sets the rotation to 0°
+Num3							Sets the rotation to 90°
+Num9							Sets the rotation to 180°
+Num7							Sets the rotation to 270°
+Num5							Rounds the position to 50'er values
+X, Y							Increases/Decreases object's rotation
+Num0							Sets OnGround to True
+*, /							Changes the height of the object
+
+Zonejump Editing
+-----------------
+Del								Remove Zonejump
+Ins								Adds a new Zonejump
+Home (Pos1)						Moves the selected Zonejump Index to the cursor
+4, 6, 2, 8						Moves the selected Zonejump Index around
+7, 9							Increases/Decreases Zonejump's height
+
+Light Editing
+-----------------
+Del								Delete Light
+Ins								Creates a light
+End								Moves the light to the cursor ignoring Z
+Home (Pos1)						Moves the light to the cursor
+
+Texturing
+-----------------
+T								Open Patch Edit window
+Page Up							Select Patchmap for Copy
+Page Down (after T)				Set layers to saved settings
+G								Toggle Grid

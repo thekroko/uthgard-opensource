@@ -1,0 +1,463 @@
+;============================================================
+; Zone 255 (copied from stygia :P)
+;============================================================
+
+[SoundRegion00];---------------------------------------------------------------------------------------------------[terrain:desert:weather]
+sound_type=1
+random_sound_spacing=1
+ignore_random_offset=0
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=10
+fade_on_weather_time=5
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+; SOUNDS 
+Sound00=2, s_Bed_Barren, 0, 100, 32, 0, 0, 0 
+Sound01=1, g_Wind_Barren, 2-6, 100, 64, 0431, 0530, 0 
+Sound02=1, g_Wind_Barren, 5-15, 100, 48, 0531, 1900, 0 
+Sound03=1, g_Wind_Barren, 2-6, 100, 64, 1901, 2000, 0 
+Sound04=1, g_Wind_Barren, 5-15, 100, 48, 2001, 0430, 0 
+
+; SHAPES 
+Shape00=0, 0, 0, 65535, 65535
+
+[SoundRegion01];---------------------------------------------------------------------------------------------------[terrain:desert:animals]
+sound_type=1
+random_sound_spacing=1
+ignore_random_offset=0
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=10
+fade_on_weather_time=5
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+; SOUNDS 
+Sound00=1, g_Animal_Arctic, 15-45, 100, 40, 0501, 1930, 1 
+Sound01=1, g_Animal_Arctic, 30-90, 100, 40, 1931, 0500, 1 
+
+; SHAPES 
+Shape00=0, 0, 0, 65535, 65535
+
+; mute for village
+xShape00=1, 35090, 55973, 2100 ; village
+xShape01=1, 8851, 47780, 4304 ; archeologe
+
+[SoundRegion02];-------------------------------------------------------------------------------------------------[terrain:desert:birdsbugs]
+sound_type=1
+random_sound_spacing=1
+ignore_random_offset=0
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=30
+fade_on_weather_time=5
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+; SOUNDS 
+Sound00=1, g_Bird_DesertDay, 20-60, 100, 40, 0501, 1930, 1 
+Sound01=1, g_Bird_DesertNight, 40-120, 100, 40, 1931, 0500, 1 
+Sound02=1, g_Insect_Prairie, 20-60, 100, 40, 0, 0, 1 
+Sound03=2, s_Insect_Loop_04, 0, 100, 32, 1931, 0500, 1 
+
+; SHAPES 
+Shape00=0, 0, 0, 65535, 65535
+
+[SoundRegion03];-------------------------------------------------------------------------------------------------------------[feature:lake]
+sound_type=1
+random_sound_spacing=1
+ignore_random_offset=0
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=8
+fade_on_weather_time=5
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+; SOUNDS 
+Sound00=2, s_Lake_Loop, 0, 100, 32, 0, 0, 0, 1 
+Sound01=1, g_Wave_Lake, 3-9, 100, 32, 0, 0, 0, 1 
+Sound02=2, s_Bed_Underwater, 0, 100, 96, 0, 0, 0, 2 
+
+; SHAPES 
+Shape00=1, 56380, 55485, 7000
+Shape01=1, 55570, 37492, 8000
+Shape02=1, 15407, 59259, 2312
+
+[SoundRegion04];------------------------------------------------------------------------------------------------------------[feature:river]
+sound_type=1
+random_sound_spacing=1
+ignore_random_offset=0
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=8
+fade_on_weather_time=5
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+; SOUNDS 
+Sound00=2, s_River_Loop, 0, 100, 40, 0, 0, 0, 1 
+Sound01=1, g_Wave_River, 3-9, 100, 40, 0, 0, 0, 1 
+Sound02=2, s_Bed_Underwater, 0, 100, 96, 0, 0, 0, 2 
+
+; SHAPES 
+Shape00=1, 56380, 55485, 7000
+Shape01=1, 51086, 50103, 2700
+Shape02=1, 48030, 47954, 2700
+Shape03=1, 44068, 46023, 2700
+Shape04=1, 39293, 46423, 2900
+Shape05=1, 37021, 40509, 2300
+Shape06=1, 34709, 38078, 2200
+Shape12=1, 16482, 30293, 2600
+Shape13=1, 13165, 29822, 2200
+Shape16=1, 43040, 50519, 1600
+Shape17=1, 41952, 52127, 1800
+Shape18=1, 40587, 54248, 2100
+Shape19=1, 39787, 56372, 2200
+Shape20=1, 39295, 58674, 2100
+Shape21=1, 40063, 60872, 2200
+Shape22=1, 42159, 61276, 1700
+Shape23=1, 44958, 61378, 1600
+Shape24=1, 47183, 61339, 2100
+Shape25=1, 49081, 61191, 2100
+
+[SoundRegion05];--------------------------------------------------------------------------------------------------[feature:village-medium3]
+sound_type=1
+random_sound_spacing=1
+ignore_random_offset=0
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=8
+fade_on_weather_time=5
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+; SOUNDS 
+Sound00=2, s_Bed_Market, 0, 100, 40, 0501, 1930, 0, 1 
+Sound01=2, s_Bed_Market, 0, 100, 24, 1931, 0500, 0, 1 
+Sound02=1, g_Human_Speak1(d), 15-45, 100, 48, 0501, 1930, 1, 1 
+Sound03=1, g_Human_Speak2(d), 15-45, 100, 48, 0501, 1930, 1, 1 
+Sound04=1, g_Labor_Anvil, 10-30, 100, 64, 0901, 1630, 1, 1 
+Sound05=1, g_Labor_Axe, 10-30, 100, 64, 0901, 1630, 1, 1 
+Sound06=1, g_Labor_Chisel, 10-30, 100, 64, 0901, 1630, 1, 1 
+Sound07=1, g_Labor_Hammer, 10-30, 100, 64, 0901, 1630, 1, 1 
+Sound08=1, g_Labor_Anvil(d), 15-45, 100, 64, 0901, 1630, 1, 1 
+Sound09=1, g_Labor_Axe(d), 15-45, 100, 64, 0901, 1630, 1, 1 
+Sound10=1, g_Labor_Chisel(d), 15-45, 100, 64, 0901, 1630, 1, 1 
+Sound11=1, g_Labor_Hammer(d), 15-45, 100, 64, 0901, 1630, 1, 1 
+Sound12=1, g_Labor_Saw(d), 15-45, 100, 64, 0901, 1630, 1, 1 
+Sound13=1, g_Dog_Bark, 10-30, 100, 56, 0501, 1930, 1, 1 
+Sound14=1, g_Dog_Bark, 20-60, 100, 56, 1931, 0500, 1, 1 
+Sound15=1, g_Dog_Bark(d), 15-45, 100, 48, 0501, 1930, 1, 1 
+Sound16=1, g_Dog_Bark(d), 30-90, 100, 48, 1931, 0500, 1, 1 
+
+; SHAPES 
+Shape00=1, 35305, 56108, 4000 ; village
+Shape01=1, 6484, 45509, 4000 ; archeologe
+xShape00=1, 3081, 46006, 1500 ; tempel
+
+[SoundRegion06];-------------------------------------------------------------------------------------------------------[object:fire-medium]
+sound_type=1
+random_sound_spacing=0
+ignore_random_offset=1
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=3
+fade_on_weather_time=0
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+; SOUNDS 
+Sound00=2, s_Fire_Loop_Medium, 0, 100, 50, 0, 0, 0, 0
+; SHAPES 
+Shape00=1, 11415, 50358, 400
+Shape01=1, 12278, 50569, 800
+Shape02=1, 8681, 45380, 600
+Shape03=1, 8394, 45618, 400
+Shape04=1, 8589, 43364, 400
+Shape05=1, 9150, 43431, 400
+Shape06=1, 6686, 44432, 400
+Shape07=1, 17393, 60323, 300
+Shape08=1, 34773, 56408, 800
+Shape09=1, 43066, 54307, 400
+Shape10=1, 42645, 54910, 400
+Shape11=1, 45713, 54260, 400
+Shape12=1, 45796, 54361, 400
+Shape13=1, 46469, 54357, 400
+Shape14=1, 46547, 54253, 400
+Shape15=1, 45837, 54597, 400
+Shape16=1, 45881, 54843, 400
+Shape17=1, 46352, 55086, 400
+Shape18=1, 45599, 55452, 400
+Shape19=1, 46447, 54580, 400
+Shape20=1, 45971, 55378, 400
+Shape21=1, 46405, 54847, 400
+Shape22=1, 46308, 55368, 400
+Shape23=1, 45933, 55095, 400
+Shape24=1, 48998, 57827, 400
+Shape25=1, 48722, 58314, 400
+Shape26=1, 46648, 55457, 400
+Shape27=1, 45607, 56503, 400
+Shape28=1, 46657, 56507, 400
+Shape29=1, 39643, 18766, 800
+Shape30=1, 14433, 12803, 400
+Shape31=1, 14678, 12431, 400
+Shape32=1, 14264, 12158, 400
+Shape33=1, 14042, 12553, 400
+Shape34=1, 10865, 11436, 600
+Shape35=1, 10454, 10800, 600
+Shape36=1, 10786, 9980, 600
+Shape37=1, 11483, 9630, 600
+Shape38=1, 12108, 10114, 600
+Shape39=1, 12563, 11824, 400
+Shape40=1, 13379, 10608, 400
+
+[SoundRegion07];------------------------------------------------------------------------------------------------------------[object:portal]
+sound_type=1
+random_sound_spacing=0
+ignore_random_offset=1
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=3
+fade_on_weather_time=0
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+; SOUNDS 
+Sound00=2, s_Powernode_Loop, 0, 100, 64, 0, 0, 0, 0
+
+; SHAPES 
+Shape00=1, 11098, 51259, 1000
+Shape01=1, 31163, 41111, 1000
+Shape02=1, 39131, 34093, 1000
+
+[SoundRegion08];---Snow
+sound_type=1
+random_sound_spacing=0
+ignore_random_offset=1
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=3
+fade_on_weather_time=0
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+; SOUNDS 
+Sound00=2, wind09, 0, 100, 64, 0, 0, 0, 0
+Sound01=2, wind10, 0, 100, 64, 0, 0, 0, 0
+Sound02=2, wind12, 0, 100, 64, 0, 0, 0, 0
+Sound03=2, wind13, 0, 100, 64, 0, 0, 0, 0
+
+
+; SHAPES 
+Shape00=1, 61680, 2261, 3150
+
+; ==============================================================
+; VOLCANUS
+; ==============================================================
+
+[SoundRegion08];---------------------------------------------------------------------------------------------------[terrain:lava-stormless]
+sound_type=1
+version=2
+random_sound_spacing=1
+ignore_random_offset=0
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=10
+fade_on_weather_time=5
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+; SOUNDS 
+Sound00=2, s_Bed_Lava, 0, 100, 24, 0, 0, 0, 1 
+Sound01=1, g_Wind_Barren, 2-6, 100, 64, 0431, 0530, 0, 1 
+Sound02=1, g_Wind_Barren, 5-15, 100, 48, 0531, 1900, 0, 1 
+Sound03=1, g_Wind_Barren, 2-6, 100, 64, 1901, 2000, 0, 1 
+Sound04=1, g_Wind_Barren, 5-15, 100, 48, 2001, 0430, 0, 1 
+Sound05=1, g_Volcano_Eruption(d), 20-60, 100, 104, 0, 0, 0, 1 
+Sound06=1, g_Lava_Flare, 20-60, 100, 96, 0, 0, 0, 1 
+Sound07=1, g_Fire_Burst, 20-60, 100, 80, 0, 0, 0, 1 
+Sound08=1, g_SteamHiss_Medium, 20-60, 100, 24, 0, 0, 0, 1 
+Sound09=2, s_Bed_Underwater, 0, 100, 96, 0, 0, 0, 2 
+
+; SHAPES 
+Shape00=1, 14097, 13238, 11000
+
+[SoundRegion09];----------------------------------------------------------------------------------------------------[feature:lavaflow-loud]
+sound_type=1
+version=2
+random_sound_spacing=1
+ignore_random_offset=0
+instant_start=1
+fade_on_mp3=0
+fade_on_mp3_time=0
+fade_time=8
+fade_on_weather_time=5
+fade_on_underwater_time=1
+zone_wide_sounds=0
+
+Sound00=2, s_Lavaflow, 0, 100, 20, 0, 0, 0, 1 
+Shape00=1, 14097, 13238, 11000
+
+; ==============================================================
+; SWAMP
+; ==============================================================
+[SoundRegion49]
+sound_type=2
+random_sound_spacing=5
+ignore_random_offset=0
+fade_on_mp3=1
+fade_on_mp3_time=1
+fade_time=5
+fade_on_weather_time=0
+fade_on_underwater_time=0
+zone_wide_sounds=0
+
+; my06_03a.wav (a-c) => 773, 774, 775
+
+Sound00=1, 773, 7, 100, 90, 0, 0, 0
+Sound01=1, 774, 5, 100, 90, 0, 0, 0
+Sound02=1, 775, 13, 100, 90, 0, 0, 0
+
+Shape00=1, 55570, 37492, 8000
+Shape01=1, 53418, 31106, 3000
+
+; ==============================================================
+; MINE
+; ==============================================================
+[SoundRegion50]
+sound_type=2
+random_sound_spacing=5
+ignore_random_offset=0
+fade_on_mp3=1
+fade_on_mp3_time=1
+fade_time=5
+fade_on_weather_time=0
+fade_on_underwater_time=0
+zone_wide_sounds=0
+
+; ambloop4.wav = 414
+; ambloop14.wav silent = 1388
+
+Sound00=1, 414, 3, 100, 64, 0, 0, 0
+Sound01=1, 1388, 7, 80, 32, 0, 0, 0
+
+Shape00=1, 34632, 26680, 2750
+
+
+; ==============================================================
+; AMBIENT MUSIC : DAY : TOAD2 : 09-15-2005
+; ==============================================================
+[SoundRegion51]
+sound_type=2
+random_sound_spacing=5
+ignore_random_offset=0
+fade_on_mp3=1
+fade_on_mp3_time=1
+fade_time=5
+fade_on_weather_time=0
+fade_on_underwater_time=6
+zone_wide_sounds=1
+
+Sound00=1, 1137, 21, 30, 99, 501, 1930, 0
+Sound01=1, 1138, 28, 40, 99, 501, 1930, 0
+Sound02=1, 1139, 35, 50, 99, 501, 1930, 0
+Sound03=1, 1140, 42, 60, 99, 501, 1930, 0
+Sound04=1, 1141, 45, 30, 69, 501, 1930, 0
+Sound05=1, 1142, 60, 40, 69, 501, 1930, 0
+Sound06=1, 1143, 75, 50, 69, 501, 1930, 0
+Sound07=1, 1144, 90, 60, 69, 501, 1930, 0
+Sound08=1, 1153, 48, 30, 69, 501, 1930, 0
+Sound09=1, 1154, 64, 40, 69, 501, 1930, 0
+Sound10=1, 1155, 80, 50, 69, 501, 1930, 0
+Sound11=1, 1156, 96, 60, 69, 501, 1930, 0
+Sound12=1, 1157, 24, 30, 99, 501, 1930, 0
+Sound13=1, 1158, 32, 40, 99, 501, 1930, 0
+Sound14=1, 1159, 40, 50, 99, 501, 1930, 0
+Sound15=1, 1160, 48, 60, 99, 501, 1930, 0
+Sound16=1, 1133, 39, 30, 99, 501, 1930, 0
+Sound17=1, 1134, 52, 40, 99, 501, 1930, 0
+Sound18=1, 1135, 65, 50, 99, 501, 1930, 0
+Sound19=1, 1136, 78, 60, 99, 501, 1930, 0
+Sound20=1, 1125, 42, 30, 89, 501, 1930, 0
+Sound21=1, 1126, 56, 40, 89, 501, 1930, 0
+Sound22=1, 1127, 70, 50, 89, 501, 1930, 0
+Sound23=1, 1128, 84, 60, 89, 501, 1930, 0
+
+
+; ==============================================================
+; AMBIENT MUSIC : NIGHT : AT07 : 09-15-2005
+; ==============================================================
+[SoundRegion52]
+sound_type=2
+random_sound_spacing=5
+ignore_random_offset=0
+fade_on_mp3=1
+fade_on_mp3_time=1
+fade_time=5
+fade_on_weather_time=0
+fade_on_underwater_time=6
+zone_wide_sounds=1
+
+Sound00=1, 1057, 10, 40, 99, 1931, 500, 0
+Sound01=1, 1058, 13, 45, 99, 1931, 500, 0
+Sound02=1, 1059, 16, 50, 99, 1931, 500, 0
+Sound03=1, 1060, 19, 55, 99, 1931, 500, 0
+Sound04=1, 1081, 16, 45, 99, 1931, 500, 0
+Sound05=1, 1082, 21, 50, 99, 1931, 500, 0
+Sound06=1, 1083, 26, 55, 99, 1931, 500, 0
+Sound07=1, 1084, 31, 60, 99, 1931, 500, 0
+Sound08=1, 1073, 22, 50, 99, 1931, 500, 0
+Sound09=1, 1074, 29, 55, 99, 1931, 500, 0
+Sound10=1, 1075, 36, 60, 99, 1931, 500, 0
+Sound11=1, 1076, 43, 65, 99, 1931, 500, 0
+Sound12=1, 1089, 28, 55, 109, 1931, 500, 0
+Sound13=1, 1090, 37, 60, 109, 1931, 500, 0
+Sound14=1, 1091, 46, 65, 109, 1931, 500, 0
+Sound15=1, 1092, 55, 70, 109, 1931, 500, 0
+
+; ==============================================================
+; AMBIENT MUSIC : UNDERWATER : AT05-24 : 09-15-2005
+; ==============================================================
+[SoundRegion53]
+sound_type=2
+random_sound_spacing=5
+ignore_random_offset=0
+fade_on_mp3=1
+fade_on_mp3_time=1
+fade_time=5
+fade_on_weather_time=0
+fade_on_underwater_time=6
+zone_wide_sounds=1
+version=2
+
+Sound00=1, 1077, 10, 40, 99, 0, 0, 0, 2
+Sound01=1, 1078, 13, 45, 99, 0, 0, 0, 2
+Sound02=1, 1079, 16, 50, 99, 0, 0, 0, 2
+Sound03=1, 1080, 19, 55, 99, 0, 0, 0, 2
+Sound04=1, 1057, 16, 45, 99, 0, 0, 0, 2
+Sound05=1, 1058, 21, 50, 99, 0, 0, 0, 2
+Sound06=1, 1059, 26, 55, 99, 0, 0, 0, 2
+Sound07=1, 1060, 31, 60, 99, 0, 0, 0, 2
+Sound08=1, 1069, 22, 50, 99, 0, 0, 0, 2
+Sound09=1, 1070, 29, 55, 99, 0, 0, 0, 2
+Sound10=1, 1071, 36, 60, 99, 0, 0, 0, 2
+Sound11=1, 1072, 43, 65, 99, 0, 0, 0, 2
+Sound12=1, 1085, 28, 55, 99, 0, 0, 0, 2
+Sound13=1, 1086, 37, 60, 99, 0, 0, 0, 2
+Sound14=1, 1087, 46, 65, 99, 0, 0, 0, 2
+Sound15=1, 1088, 55, 70, 99, 0, 0, 0, 2
+
+

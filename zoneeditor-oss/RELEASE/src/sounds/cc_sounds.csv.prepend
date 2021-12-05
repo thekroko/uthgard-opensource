@@ -1,0 +1,4 @@
+!,SOUND DEFAULT PARAMETER VALUES,,,,,,,,,,,,,
+#,0,s_default,,1,1,C,0,0,1000,50,0,,1,1
+; ADD Your sounds here
+,9000,uth_sg_woosh,uth_sg_woosh.wav,*,.90,*,*,*,*,*,*,*,*,*

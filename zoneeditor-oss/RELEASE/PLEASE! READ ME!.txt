@@ -1,0 +1,20 @@
+-1.) Install the Managed DirectX SDK (if that is still a thing), and .NET ---3.5--- (I think it's 4.0 now)
+
+0.) Edit paths in settings.cmd
+2.) Start start_zoneedit.bat
+3.) Mess around
+4.) Call connect.bat
+5.) See how you messed up your client!
+-> But you will have to create Region 255 and Zone 255 (Offset 1,1) first:
+ /code RegionData d =  new RegionData(); d.Name = "test"; d.Id = 255; d.Description = "test"; WorldMgr.RegisterRegion(WorldMgr.GetRegion(265).TimeManager, d);
+ /code WorldMgr.RegisterZone(255, 255, "test zone", 1, 1, 8, 8);
+-> /jump to 18000 26000 2500 255
+
+...
+
+Don't wonder, I only "made" this zone in 5 min, so it is just there 
+to show you how to do things
+
+Have a look at the shortcut list! (? -> Shortcuts) -- most of the editor functionality is short cut based, and not exposed in the UI
+
+You can create your own meshes and paint textures, but it's a bit complicated and not well documented.

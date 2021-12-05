@@ -1,0 +1,29 @@
+public static void Run()
+{
+	SortedDictionary<string, int> dic = new SortedDictionary<string, int>();
+	int total = 0;
+    foreach (obj f in objects)
+    {
+        if (!dic.ContainsKey(f.NIF.FileName))
+            dic.Add(f.NIF.FileName, 0);
+        dic[f.NIF.FileName]++;
+        total++;
+    }
+    
+    List<string> res = new List<string>();
+
+    foreach (KeyValuePair<string, int> kv in dic)
+        res.Add(kv.Value.ToString().PadRight(4) + " \t-> "+kv.Key);
+
+    res.Sort(new Comparison<string>(delegate (string a, string b)
+                                        {
+                                            int x = int.Parse(a.Split(' ')[0]);
+                                            int y = int.Parse(b.Split(' ')[0]);
+                                            return -x.CompareTo(y);
+                                        }));
+    string text = String.Join("\r\n", res.ToArray());
+    log(text);
+    log("----------------------");
+    log("total objects: "+total);
+    log("unused nifs: "+(nifs.Count - res.Count)+"/"+(nifs.Count));
+}

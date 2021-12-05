@@ -1,0 +1,327 @@
+;------------------------------------------------------------------------------
+;   UTHGARD
+;------------------------------------------------------------------------------
+[main]
+data_path           =zones/sky
+;debug_storm_percent =1.0
+
+;------------------------------------------------------------------------------
+; heavenly body (no, not that kind) settings
+;------------------------------------------------------------------------------
+; sun
+sun_distance  =500.0
+
+sun_texture   =uth_sun.bmp 
+sun_scale     =15.0
+sundisk_color     =255,0,0,128
+sundisk_color_storm =255,0,0,32
+sundisk_color_noon =255,255,255,255
+sundisk_color_noon_storm =255,0,0,128
+
+sunflare_texture  =sunflare.bmp 
+sunflare_scale    =150.0
+sunflare_color    =255,128,0,128
+sunflare_color_storm =255,128,0,128
+sunflare_color_noon =255,160,30,128
+sunflare_color_noon_storm  =255,160,30,128
+
+sunglow_texture   =sunglow.bmp 
+sunglow_scale     =150.0
+sunglow_color     =255,64,0,128
+sunglow_color_storm =255,64,0,128
+sunglow_color_noon =255,160,30,255
+sunglow_color_noon_storm =255,160,30,255
+
+ecliptic_angle =20
+
+;------------------------------------------------------------------------------
+; moon
+moon_distance =500.0
+moon_texture  =moon.tga
+moon_scale    =15.0
+moon_color    =255,245,217,255
+
+; note: moonback uses moon scale
+moonback_texture  =moonback.tga
+moonback_color    =16,51,89,255
+
+;------------------------------------------------------------------------------
+; stars
+star_distance =700.0
+star_texture  =whitestar32.tga
+max_stars     =1000
+star_scale    =2.0
+
+;------------------------------------------------------------------------------
+; cloud settings
+; Note: cloud UV scroll speeds are multiplied by 0.001 in the code
+; these settings should change from dome settings to weather condition settings
+; we can vary the top/bottom and overcast textures and their scroll speeds to 
+; match specific weather conditions
+; conditions:
+; clear
+; partly cloudy
+; cloudy
+; overcast
+; thunderclouds
+;------------------------------------------------------------------------------
+cloud_top_texture  =cloudsB.dds
+cloud_top_tile     =5.0
+cloud_top_speed    =3.0
+
+cloud_bot_texture  =cloudsE.dds
+cloud_bot_tile     =4.0
+cloud_bot_speed    =5.0
+
+cloud_top_texture2  =cloudsF.dds
+cloud_top_tile2     =4.0
+cloud_top_speed2    =5.0
+
+cloud_bot_texture2  =cloudsG.dds
+cloud_bot_tile2     =3.0
+cloud_bot_speed2    =9.0
+
+;------------------------------------------------------------------------------
+; lights and fog
+;------------------------------------------------------------------------------
+[lights_and_fog_clear]
+dawn_ambient_light =128,161,255
+day_ambient_light =178,208,255
+dusk_ambient_light =166,166,255  
+night_ambient_light =76,76,191
+
+dawn_ambient_light_amount =0.45
+day_ambient_light_amount =0.5
+dusk_ambient_light_amount =0.45
+night_ambient_light_amount =0.35
+
+dawn_dynamic_light =255,102,0
+day_dynamic_light =255,225,178 
+dusk_dynamic_light =255,150,0
+night_dynamic_light =255,255,255
+
+dawn_dynamic_light_amount =0.65
+day_dynamic_light_amount =0.6
+dusk_dynamic_light_amount =0.65
+night_dynamic_light_amount =0.1
+
+dawn_distance_fog  =131,100,104
+day_distance_fog   =141,170,217
+dusk_distance_fog  =115,113,127
+night_distance_fog =6,20,38
+
+
+;------------------------------------------------------------------------------
+; CANOPY COLOR SETS (values are RGBA 0 -> 255)
+;------------------------------------------------------------------------------
+[canopy_color_clear]
+
+; dawn - clear
+dawn_zenith=28,55,99,128
+dawn_nadir=0,0,0,255
+
+dawn_east1=34,62,105,255
+dawn_east2=217,147,119,255
+dawn_east3=217,121,108,255
+dawn_east4=128,18,51,255
+
+dawn_west1=34,62,105,255
+dawn_west2=114,132,152,255
+dawn_west3=140,147,155,255
+dawn_west4=245,174,105,255
+
+; day - clear
+day_zenith=82,134,217,255 
+day_nadir=0,0,0,0
+day_east1=82,134,217,255 
+day_east2=108,150,217,255
+day_east3=152,177,217,255
+day_east4=217,217,217,255
+
+day_west1=82,134,217,255 
+day_west2=108,150,217,255 
+day_west3=152,177,217,255 
+day_west4=217,217,217,255 
+
+; dusk - clear
+dusk_zenith=82,134,217,255
+dusk_nadir=0,0,0,255
+
+dusk_east1=82,134,217,255 
+dusk_east2=174,200,242,255
+dusk_east3=140,147,155,255
+dusk_east4=140,147,155,255
+
+dusk_west1=82,134,217,255 
+dusk_west2=217,147,119,255
+dusk_west3=245,153,105,255
+dusk_west4=103,44,94,255
+
+; night - clear
+night_zenith=5,18,33,255
+night_nadir=0,0,0,0
+
+night_east1=5,18,33,255
+night_east2=5,18,33,255
+night_east3=6,20,38,255
+night_east4=8,25,48,255
+
+night_west1=5,18,33,255
+night_west2=5,18,33,255
+night_west3=6,20,38,255
+night_west4=8,25,48,255
+
+;------------------------------------------------------------------------------
+; CLOUD COLOR SETS (values are RGBA 0 -> 255)
+;------------------------------------------------------------------------------
+; Note: no nadir and last ring will almost always need to be alphaed out
+;------------------------------------------------------------------------------
+[cloud_color_clear]
+; dawn - clear
+dawn_zenith=128,128,128,255
+
+dawn_east1=241,167,95,255
+dawn_east2=186,113,93,255  
+dawn_east3=158,59,49,128
+dawn_east4=77,20,0,0
+
+dawn_west1=128,128,128,255
+dawn_west2=128,128,128,255
+dawn_west3=140,147,155,128
+dawn_west4=148,122,157,0
+
+; day - clear
+day_zenith=255,255,255,255
+
+day_east1=255,255,255,255
+day_east2=255,243,223,128
+day_east3=255,230,217,64
+day_east4=255,255,255,0
+
+day_west1=255,255,255,255
+day_west2=255,243,223,128
+day_west3=255,230,217,64
+day_west4=255,255,255,0
+
+; dusk - clear
+dusk_zenith=181,205,231,255
+
+dusk_east1=201,215,231,255 
+dusk_east2=201,215,231,255 
+dusk_east3=229,149,136,63
+dusk_east4=245,131,105,0
+
+dusk_west1=155,167,185,191
+dusk_west2=129,130,140,127 
+dusk_west3=103,93,94,63
+dusk_west4=77,56,49,0
+
+; night - clear
+night_zenith=16,51,89,255 
+
+night_east1=16,51,89,255 
+night_east2=16,51,89,64
+night_east3=16,51,89,0
+night_east4=16,51,89,0 
+
+night_west1=16,51,89,255
+night_west2=16,51,89,64
+night_west3=16,51,89,0
+night_west4=16,51,89,0
+
+;------------------------------------------------------------------------------
+[cloud_color_stormy]
+; dawn - clear
+dawn_zenith=128,128,128,255
+
+dawn_east1=241,167,95,255
+dawn_east2=186,113,93,255  
+dawn_east3=158,59,49,128
+dawn_east4=77,20,0,0
+
+dawn_west1=128,128,128,255
+dawn_west2=128,128,128,255
+dawn_west3=140,147,155,128
+dawn_west4=148,122,157,0
+
+; day - clear
+day_zenith=255,255,255,255
+
+day_east1=255,255,255,255
+day_east2=255,243,223,128
+day_east3=255,230,217,64
+day_east4=255,255,255,0
+
+day_west1=255,255,255,255
+day_west2=255,243,223,128
+day_west3=255,230,217,64
+day_west4=255,255,255,0
+
+; dusk - clear
+dusk_zenith=181,205,231,255
+
+dusk_east1=201,215,231,255 
+dusk_east2=201,215,231,255 
+dusk_east3=229,149,136,63
+dusk_east4=245,131,105,0
+
+dusk_west1=155,167,185,191
+dusk_west2=129,130,140,127 
+dusk_west3=103,93,94,63
+dusk_west4=77,56,49,0
+
+; night - clear
+night_zenith=16,51,89,255 
+
+night_east1=16,51,89,255 
+night_east2=16,51,89,64
+night_east3=16,51,89,0
+night_east4=16,51,89,0 
+
+night_west1=16,51,89,255
+night_west2=16,51,89,64
+night_west3=16,51,89,0
+night_west4=16,51,89,0
+
+;------------------------------------------------------------------------------
+; PRECIPITATION
+;------------------------------------------------------------------------------
+[storm_system]
+period=0
+percent_chance=0
+min_speed=100
+max_speed=100
+min_width=3000
+max_width=3000
+min_intensity=0
+max_intensity=100
+min_world_x=-1024
+max_world_x=1024
+min_front_width=1000
+max_front_width=1000
+
+[rain]
+max_drops=0
+drop_length=0
+velocity=0
+ceiling=0
+floor=0
+inner_radius=0
+outer_radius=0
+top_color=160,160,160,0
+bot_color=160,160,160,64
+
+[snow]
+max_flakes=30000
+flake_length=0
+flake_radius=1
+velocity=60
+ceiling=500
+floor=-100
+inner_radius=120
+outer_radius=200
+flake_color   =255,255,255,255
+flake_texture = utz_snow.tga
+drift_chance  = 20 ; 0-100
+drift_amount  = 0.5 ; game units
+drift_period  = 1   ; seconds

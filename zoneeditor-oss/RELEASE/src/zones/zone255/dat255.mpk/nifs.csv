@@ -1,0 +1,9 @@
+Grid Nifs,,,Ambient,Merlin Data
+NIF,Textual Name,Filename,Only,Shadow,Color,Animate,Collide,Ground,MinAngle,MaxAngle,MinScale,MaxScale,Radius,LOD 1,LOD 2,LOD 3,LOD 4,Ref Height,Ref Width,Unique,Local,Terrain
+1,appletree.NIF|,appletree.NIF,0,0,0,0,2048,1,0,0,100,100,0,0,0,0,0,16,16,0,0,0
+2,bigtree.nif|,bigtree.nif,0,0,0,0,2048,1,0,0,100,100,0,0,0,0,0,16,16,0,0,0
+3,N_Rock1.nif|,N_Rock1.nif,0,0,0,0,2048,1,0,0,100,100,0,0,0,0,0,16,16,0,0,0
+4,N_Rock3.nif|,N_Rock3.nif,0,0,0,0,2048,1,0,0,100,100,0,0,0,0,0,16,16,0,0,0
+5,b-forge1.nif|,b-forge1.nif,0,0,0,0,2048,1,0,0,100,100,0,0,0,0,0,16,16,0,0,0
+6,Bfarmhouse.NIF|,Bfarmhouse.NIF,0,0,0,0,2048,1,0,0,100,100,0,0,0,0,0,16,16,0,0,0
+7,Medium_portal.NIF|,Medium_portal.NIF,0,0,0,0,2048,1,0,0,100,100,0,0,0,0,0,16,16,0,0,0

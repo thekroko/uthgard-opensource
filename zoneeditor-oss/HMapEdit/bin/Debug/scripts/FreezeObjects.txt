@@ -1,0 +1,8 @@
+public static void Run()
+{
+	foreach (obj f in objects)
+	{
+		if (f.Group == "swamp filled")
+			f.WireFrame = true;
+	}
+}
