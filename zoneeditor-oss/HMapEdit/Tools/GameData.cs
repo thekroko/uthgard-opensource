@@ -140,6 +140,7 @@ namespace HMapEdit.Tools
       get {
         yield return "nifs";
         yield return Path.Combine("zones", "nifs");
+        yield return Path.Combine("Tutorial", "zones", "nifs");
       }
     }
 
