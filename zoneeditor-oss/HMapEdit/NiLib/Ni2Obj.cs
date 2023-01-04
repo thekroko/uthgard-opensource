@@ -36,7 +36,7 @@ namespace HMapEdit.NiLib {
       float d90 = (float) Math.PI/2f;
       var matrix = Matrix.Scaling(1, 1, -1) * Matrix.RotationYawPitchRoll(0, d90, 0);
       AddModelToObj(obj, model, matrix, new[] {Program.Arguments.NifLayer}, false);
-      if (obj.MeshCount == 0) {
+      if (obj != null && obj.MeshCount == 0) {
         AddModelToObj(obj, model, matrix, new string[0], true);  
       }
       return obj;
@@ -136,7 +136,7 @@ namespace HMapEdit.NiLib {
         }
       }
 
-      if (!foundMesh && filter[0] == "pickee") {
+      if (!foundMesh && filter!=null && filter.Length!=0 && filter[0] == "pickee") {
         // no pickee found, use collide
         Console.WriteLine("Warning: Using collidee!");
         AddModelToObj(objFile, model, worldMatrix, new[] {"collide"}, false);
